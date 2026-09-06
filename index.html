@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#F2A2A2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx?v=426"></script>
+    <script>
+      // 页面渲染兜底：若 React 长时间未挂载，提示用户刷新
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const root = document.getElementById('root');
+          if (root && root.childElementCount === 0 && !window.__yannyu_render_ok__) {
+            root.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:24px;text-align:center;font-family:sans-serif;color:#666;"><h1 style="font-size:18px;color:#333;margin-bottom:8px;">加载失败</h1><p style="font-size:14px;margin-bottom:16px;">应用未能正常启动，可能是缓存旧版本导致。</p><button onclick="window.location.reload(true)" style="padding:10px 20px;background:#07c160;color:#fff;border:none;border-radius:20px;font-size:14px;">点击刷新</button></div>';
+          }
+        }, 6000);
+      });
+    </script>
+    <style>
+      html, body { height: 100%; background: hsl(var(--background)); color: hsl(var(--foreground)); transition: background-color 0.3s ease, color 0.3s ease; }
+      #root { width: 100%; min-height: 100dvh; background: hsl(var(--background)); color: hsl(var(--foreground)); transition: background-color 0.3s ease, color 0.3s ease; }
+    </style>
+  </body>
+</html>
