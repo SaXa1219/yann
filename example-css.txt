@@ -1,0 +1,57 @@
+/* 温柔奶油风示例：只美化聊天气泡，可按需调整变量 */
+.sc-bubble {
+  position: relative;
+  border-radius: var(--bubble-radius, 26px) !important;
+  padding: 14px 20px 16px 18px !important;
+  box-shadow: none !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+.sc-bubble:active {
+  transform: scale(0.98);
+}
+.sc-bubble::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  z-index: -1;
+}
+.sc-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: var(--bubble-tail-width, 10px);
+  height: var(--bubble-tail-height, 14px);
+  z-index: -1;
+  background: var(--bubble-color);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.sc-user::before {
+  background: linear-gradient(135deg, var(--accent-color) 0%, color-mix(in srgb, var(--accent-color) 72%, white) 100%);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+.sc-user {
+  color: #ffffff !important;
+  border: none !important;
+}
+.sc-user::after {
+  right: calc(var(--bubble-tail-offset, 6px) * -1);
+}
+
+.sc-sys::before {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+}
+.sc-sys {
+  color: #3d3d3d !important;
+  border: none !important;
+}
+.sc-sys::after {
+  left: calc(var(--bubble-tail-offset, 6px) * -1);
+  transform: scaleX(-1);
+  transform-origin: left center;
+}
