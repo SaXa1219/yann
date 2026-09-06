@@ -1,0 +1,17 @@
+{
+  "name": "yann语",
+  "short_name": "yann语",
+  "description": "用字卡传递温暖，与灵魂相伴",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#FAFAFA",
+  "theme_color": "#576B95",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

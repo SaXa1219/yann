@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>yann语 - 离线中</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #FAFAFA;
+      color: #333;
+    }
+    .box {
+      text-align: center;
+      padding: 32px;
+    }
+    .icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: #F2F2F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon svg { width: 28px; height: 28px; color: #888; }
+    h1 { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
+    p { font-size: 14px; color: #888; margin: 0 0 24px; line-height: 1.5; }
+    button {
+      padding: 10px 24px;
+      border-radius: 20px;
+      border: none;
+      background: #576B95;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 18.5a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13Z"/>
+        <path d="M5.5 12a6.5 6.5 0 0 1 .91-3.34"/>
+        <path d="M2 12a10 10 0 0 1 1.26-4.86"/>
+        <path d="M18.5 12a6.5 6.5 0 0 0-.91-3.34"/>
+        <path d="M22 12a10 10 0 0 0-1.26-4.86"/>
+        <path d="M12 12h.01"/>
+      </svg>
+    </div>
+    <h1>当前处于离线状态</h1>
+    <p>请检查网络连接后刷新页面。<br>已开启后台保活的消息与来信会在联网后自动同步。</p>
+    <button onclick="location.reload()">刷新试试</button>
+  </div>
+</body>
+</html>
